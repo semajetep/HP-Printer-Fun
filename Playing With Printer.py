@@ -22,7 +22,7 @@ except socket.error, e:
 
 print 'Connected'
 
-message ="Ready"
+message ="I wanted to be a fruit machine, but insted i print :-( "
 print 'Setting ready message to "%s" on %s' % (message, host)
 command = "\x1B%%-12345X@PJL RDYMSG DISPLAY = \"%s\"\r\n\x1B%%-12345X\r\n" % message
 sock.sendall(command)
