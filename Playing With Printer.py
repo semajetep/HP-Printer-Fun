@@ -9,6 +9,9 @@ Works for most network-enabled HP printers.
 import socket
 import sys
 import os.path
+import random
+
+messages = ["Hello","Test", "Another"]
 
 # Default configuration
 host = '10.1.54.6'
@@ -22,7 +25,8 @@ except socket.error, e:
 
 print 'Connected'
 
-message ="I wanted to be a fruit machine, but insted i print :-( "
+message = messages[random.randint(0,2)]
+
 print 'Setting ready message to "%s" on %s' % (message, host)
 command = "\x1B%%-12345X@PJL RDYMSG DISPLAY = \"%s\"\r\n\x1B%%-12345X\r\n" % message
 sock.sendall(command)
