@@ -13,7 +13,7 @@ import random
 
 from time import sleep
 
-messages = ["Hello","Test", "Another"]
+messages = ["Hello World","All i do is print :-(", "Another network issue", "Please insert Coin!","Sleeping"]
 
 # Default configuration
 host = '10.1.54.6'
@@ -29,7 +29,7 @@ print 'Connected'
 
 while True:
     
-    message = messages[random.randint(0,2)]
+    message = messages[random.randint(0,4)]
 
     print 'Setting ready message to "%s" on %s' % (message, host)
     command = "\x1B%%-12345X@PJL RDYMSG DISPLAY = \"%s\"\r\n\x1B%%-12345X\r\n" % message
