@@ -27,7 +27,7 @@ except socket.error, e:
 
 print 'Connected'
 
-while true:
+while True:
     
     message = messages[random.randint(0,2)]
 
