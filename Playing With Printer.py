@@ -11,6 +11,8 @@ import sys
 import os.path
 import random
 
+from time import sleep
+
 messages = ["Hello","Test", "Another"]
 
 # Default configuration
@@ -25,9 +27,12 @@ except socket.error, e:
 
 print 'Connected'
 
-message = messages[random.randint(0,2)]
+while true:
+    
+    message = messages[random.randint(0,2)]
 
-print 'Setting ready message to "%s" on %s' % (message, host)
-command = "\x1B%%-12345X@PJL RDYMSG DISPLAY = \"%s\"\r\n\x1B%%-12345X\r\n" % message
-sock.sendall(command)
+    print 'Setting ready message to "%s" on %s' % (message, host)
+    command = "\x1B%%-12345X@PJL RDYMSG DISPLAY = \"%s\"\r\n\x1B%%-12345X\r\n" % message
+    sock.sendall(command)
+    sleep(5)
 
